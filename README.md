@@ -5,7 +5,7 @@ Suitable for quick prototype games that wants some button animation
 
 ## Installation
 
-Download the Unity package manager in the install section.
+Download the Unity package manager in the release section.
 
 ## Usage
 
