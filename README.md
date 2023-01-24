@@ -1,6 +1,6 @@
-# TweenAnimatedButton
+# Unity Simple TweenAnimatedButton
 
-TweenAnimatedButton is a small simple and quick to apply Unity button replacement component that comes with a simple tween animation. 
+Unity Simple TweenAnimatedButton is a small simple and quick to apply Unity button replacement component that comes with a simple tween animation. 
 Suitable for quick prototype games that wants some button animation
 
 ## Installation
