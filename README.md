@@ -34,6 +34,11 @@ The animation tween type can be adjusted in the LeanTween.scale function below. 
 ## Development
 Component is still under development with some feature such as blocking raycast after clicking to be added.
 
-## License
+## Copyright and Licensing:
+
+### Third-Party Code Attribution:
+The asset creators below retain all rights to their assets.
+
+- **[Lean Tween]("https://github.com/dentedpixel/LeanTween")** by dentedpixel
 
 [MIT](https://choosealicense.com/licenses/mit/)
