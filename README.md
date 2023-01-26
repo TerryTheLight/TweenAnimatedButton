@@ -39,6 +39,6 @@ Component is still under development with some feature such as blocking raycast 
 ### Third-Party Code Attribution:
 The asset creators below retain all rights to their assets.
 
-- **[Lean Tween]("https://github.com/dentedpixel/LeanTween")** by dentedpixel
+- **[Lean Tween](https://github.com/dentedpixel/LeanTween)** by dentedpixel
 
 [MIT](https://choosealicense.com/licenses/mit/)
