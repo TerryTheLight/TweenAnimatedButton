@@ -11,16 +11,19 @@ using UnityEngine.Events;
 /// </summary>
 public class TweenAnimatedButton : Button
 {
-    [SerializeField] private bool _disableUntilTweenFin = false;
-
+    [Tooltip("Activate a raycast blocker when animating so players could not double click a button")]
+    [SerializeField] private bool _disableUntilTweenFin = true;
     private Vector3 scaleUpSize = new Vector3(1.03f, 1.03f, 1.03f);
+
+    private bool isTweening = false;
 
     public override void OnPointerClick(PointerEventData eventData)
     {
-        if (!IsActive() || !IsInteractable())
+        if (!IsActive() || !IsInteractable() || isTweening)
             return;
 
-        //TODO: Find ways to block raycast before the tween is complete
+        if(_disableUntilTweenFin)
+            isTweening = true;
 
         //Run the tween animation first before running the real onClick
         LeanTween.scale(this.gameObject, scaleUpSize, 0.3f).setEaseShake().setOnComplete(OnCompleteClickAnimation);
@@ -30,5 +33,6 @@ public class TweenAnimatedButton : Button
     {
         UISystemProfilerApi.AddMarker("Button.onClick", this);
         base.onClick?.Invoke();
+        isTweening = false;
     }
 }

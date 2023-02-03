@@ -4,9 +4,9 @@ using UnityEditor.UI;
 [CustomEditor(typeof(TweenAnimatedButton))]
 public class TweenAnimatedButtonEditor : ButtonEditor
 {
-    private SerializedProperty _preClickEventProperty;
-    private SerializedProperty m_OnClickProperty;
-    private SerializedProperty m_InteractableProperty;
+    private SerializedProperty _disableTillTweenFinProperty;
+    private SerializedProperty _onClickProperty;
+    private SerializedProperty _interactableProperty;
 
     protected override void OnEnable()
     {
@@ -14,15 +14,17 @@ public class TweenAnimatedButtonEditor : ButtonEditor
 
         // or any other private field
         //_preClickEventProperty = serializedObject.FindProperty("_onPreClick");
-        m_OnClickProperty = serializedObject.FindProperty("m_OnClick");
-        m_InteractableProperty = serializedObject.FindProperty("m_Interactable");
+        _onClickProperty = serializedObject.FindProperty("m_OnClick");
+        _interactableProperty = serializedObject.FindProperty("m_Interactable");
+        _disableTillTweenFinProperty = serializedObject.FindProperty("_disableUntilTweenFin");
     }
 
     public override void OnInspectorGUI()
     {
         //EditorGUILayout.PropertyField(_preClickEventProperty);
-        EditorGUILayout.PropertyField(m_OnClickProperty);
-        EditorGUILayout.PropertyField(m_InteractableProperty);
+        EditorGUILayout.PropertyField(_onClickProperty);
+        EditorGUILayout.PropertyField(_interactableProperty);
+        EditorGUILayout.PropertyField(_disableTillTweenFinProperty);
         serializedObject.ApplyModifiedProperties();
     }
 
